@@ -17,6 +17,7 @@ body {
 
 .block--red {
   background-color: red;
+  position: relative;
 }
 
 .block--blue {

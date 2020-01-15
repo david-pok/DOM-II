@@ -63,23 +63,26 @@ contextMenu.addEventListener("contextmenu", () => {
   contextMenu.style.color = "maroon";
 });
 
-//PREVENT DEFAULT
-const stopLink = document.querySelector(".nav-link");
+//MOUSEUP
+const mouseUp = document.querySelector("h4");
+mouseUp.addEventListener("mouseup", () => {
+  mouseUp.style.color = "beige";
+});
 
-stopLink.addEventListener("click", event => {
-  event.preventDefault();
-  console.log("stopped the link");
+//PREVENT DEFAULT
+document.querySelectorAll(".nav-link").forEach(el => {
+  el.addEventListener("click", e => {
+    e.preventDefault();
+  });
 });
 
 //PROPOGATION
 const outer = document.querySelector(".content-section");
-
 outer.addEventListener("click", () => {
   outer.style.backgroundColor = "red";
 });
 
 const inner = document.querySelector(".text-content");
-
 inner.addEventListener("click", event => {
   inner.style.backgroundColor = "orange";
   event.stopPropagation();
